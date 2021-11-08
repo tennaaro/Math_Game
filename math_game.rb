@@ -20,9 +20,13 @@ class Game
       puts "#{current_player.name} #{question.question}?"
       print "> "
       answer = $stdin.gets.chomp
-      correct = question.check_answer(answer)
+      answer_int = answer.to_i
+      correct = question.check_answer(answer_int)
       if !correct
-        current_player.lives = current_player.lives - 1 
+        puts "#{current_player.name}: Seriously? No!"
+        current_player.lives = current_player.lives - 1
+      else
+        puts "#{current_player.name}: YES! You are correct."
       end
       puts "#{self.player1.name}: #{self.player1.lives}/3 vs #{self.player2.name}: #{self.player2.lives}/3"
       puts "----------- NEW TURN -----------"
