@@ -1,4 +1,3 @@
-
 class Player
   attr_reader :name, :lives
   attr_writer :name, :lives
@@ -7,5 +6,4 @@ class Player
     self.name = name
     self.lives = 3
   end
-
 end
